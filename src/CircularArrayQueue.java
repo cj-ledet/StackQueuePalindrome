@@ -15,6 +15,7 @@ public class CircularArrayQueue<E> implements Queue<E> {
     //Fields
     private E[] mArr;
     private int mFront, mRear;
+    private int mSize = 0;
 
     //TODO: uncomment suppression below
     //@SuppressWarnings("unchecked")
@@ -42,6 +43,7 @@ public class CircularArrayQueue<E> implements Queue<E> {
 
         mRear = (mRear + 1) % mArr.length;
         mArr[mRear] = e;
+        mSize++;
         return true;
     }
 
@@ -55,6 +57,7 @@ public class CircularArrayQueue<E> implements Queue<E> {
             clear();
         else
             mFront = (mFront + 1) % mArr.length;
+        mSize--;
         return temp;
     }
 
@@ -68,6 +71,7 @@ public class CircularArrayQueue<E> implements Queue<E> {
             clear();
         else
             mFront = (mFront + 1) % mArr.length;
+        mSize--;
         return temp;
     }
 
@@ -90,7 +94,7 @@ public class CircularArrayQueue<E> implements Queue<E> {
     //Implemented Queue Methods
     @Override
     public int size() {
-        return mArr.length;
+        return mSize;
     }
 
     @Override
@@ -139,6 +143,7 @@ public class CircularArrayQueue<E> implements Queue<E> {
 
         mRear = (mRear + 1) % mArr.length;
         mArr[mRear] = e;
+        mSize++;
         return true;
     }
 
