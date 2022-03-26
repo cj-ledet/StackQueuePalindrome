@@ -65,34 +65,6 @@ public class PalindromeTest {
         return results;
     } // End of method isPalindrome
 
-    //=================================================================
-//    private boolean isPalindrome(String s) {
-//        if (s == null) {
-//            throw new IllegalArgumentException("String must be non-null.");
-//        }
-//
-//        StackInterface<Character> stack = new ArrayListStack<>();
-//        char[] chars =  s.toLowerCase().replaceAll(" ", "").toCharArray();
-//
-//        int i = 0;
-//        for (; i < chars.length / 2; i++) {
-//            stack.push(chars[i]);
-//        }
-//        if (chars.length % 2 == 1) {
-//            i++;
-//        }
-//        while (!stack.empty()) {
-//            if (stack.pop() != chars[i++]) {
-//                return false;
-//            }
-//        }
-//
-//        return true;
-//
-//    }
-    //=================================================================
-
-
     @Test
     public void testErrors() {
         try {
